@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+body {
+    background-color: #85afd4;
+    color: white;
+    font-family: "Lato", sans-serif;
+    text-align: center;
+}
+
+h3,h2,h1 {
+    font-weight: bold;
+}
+
+p {
+    font-weight: normal;
+}
+
+input[type="submit"] {
+    background-color: #E47272;
+    color: white;
+    border-radius: 20px;
+}
+
+button {
+    background-color: #E47272;
+    color: white; 
+    border-radius: 20px;
+}
+
+.regNow {
+    font-weight: bold;  
+    color: white; 
+}
+
+.forPass {
+    font-weight: bold;
+    color: white;
+}
+
+.table1 {
+    border: 2px solid; 
+    border-color: white;
+    margin: auto;
+    width: 40%;
+}
+
+.table1 td,th {
+    border: 2px solid;
+    border-color: white;
+}
+
+
+
+
