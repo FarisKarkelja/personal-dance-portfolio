@@ -1,0 +1,19 @@
+body {
+  background-color: #efefef;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.custom-btn {
+  background-color: #eb9720;
+  color: white; 
+}
+
+.custom-btn:hover {
+  background-color: #d28919; 
+  border-color: #d28919; 
+}
+
