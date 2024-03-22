@@ -1,0 +1,92 @@
+
+@font-face {
+    font-family: 'PhotographSignature';
+    src: url('fonts/PhotographSignature.ttf') format('truetype');
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex; 
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffa500;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none; 
+        flex-direction: column; 
+        position: absolute; 
+        top: 60px; 
+        background-color: #ffffff; 
+        width: 100%; 
+    }
+
+    nav ul li {
+        margin: 10px 0; 
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+}
+
+section {
+    padding: 40px 0;
+}
+
+section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 36px 0;
+    text-align: center;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+.navbar-brand {
+    font-family: 'PhotographSignature', sans-serif;
+    font-size: 40px;
+    color: #000000;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.nav-item .nav-link {
+    color: black;
+}
