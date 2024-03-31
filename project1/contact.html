@@ -1,22 +1,81 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
-    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 
 <body>
-    <h1>Contact</h1>
-    <p>Contact info/form.</p>
 
+<section class="header">
 
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+          <i class="fas fa-bars"></i>
+        </label>
+        <label class="logo">FK</label>
+        <ul>
+          <li><a href="index.html" class="navbar-link">Home</a></li>
+          <li><a href="about.html" class="navbar-link">About</a></li>
+          <li><a href="projects.html" class="navbar-link">Projects</a></li>
+          <li><a href="gallery.html" class="navbar-link">Gallery</a></li>
+          <li><a href="contact.html" class="navbar-link">Contact</a></li>
+        </ul>
+      </nav>
+      
+      <div class="wrapper">
 
+        <h2><span class="contact-word">Contact</span> Me</h2>
 
+            <form action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="66bcdd74-368f-47ed-97ae-aff77e14dc94">
+                
+                <div class="input-field">
+                    <input type="text" name="name" required>
+                    <label>Name</label>
+                </div>
+                <div class="input-field">
+                    <input type="email" name="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-field">
+                    <input type="text" name="subject" required>
+                    <label>Subject</label>
+                </div>
+                <div class="input-field">
+                    <textarea name="message" rows="5" required></textarea>
+                    <label>Message</label>
+                </div>
 
+                <input class="btn" type="submit" value="Submit">
+            </form>
+        
+        </div> 
+
+    <section class="footer">
+
+        <div class="icons">
+
+            <a href="https://www.facebook.com/faris.karkelja" target="_blank">
+                <i class="fab fa-facebook"></i>
+            </a>
+
+            <a href="https://www.instagram.com/faris.karkelja" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+
+        </div>
+
+        <p>&copy; 2024 Faris Karkelja. All rights reserved.</p>
+    
+    </section>
 
 </body>
 

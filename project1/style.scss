@@ -1,0 +1,187 @@
+/* Variables */
+
+$primary-color: #000;
+$secondary-color: #d4af37;
+
+/* Mixins */
+
+@mixin center {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Styles */ 
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  width: 100%;
+  height: 100vh;
+  background: #000
+}
+
+.wrapper {
+  @include center;
+  width: 600px;
+  padding: 40px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.wrapper h2 {
+  color: $primary-color;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-size: 30px;
+}
+
+.wrapper .contact-word {
+  color: $secondary-color;
+}
+
+.input-field {
+  position: relative;
+  width: 100%;
+  margin-top: 50px;
+}
+
+.input-field input,
+.input-field textarea {
+  width: 100%;
+  padding: 5px 0;
+  box-sizing: border-box;
+  background: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #000;
+  font-size: 14px;
+  color: $primary-color;
+  font-weight: 700;
+}
+
+.input-field label {
+  position: absolute;
+  top: -30px;
+  left: 0;
+  padding: 5px 0;
+  pointer-events: none;
+  font-size: 16px;
+  color: #000;
+  font-weight: 700;
+  transition: 0.5s;
+}
+
+.input-field input:focus + label,
+.input-field textarea:focus + label {
+  top: -25px;
+  font-size: 14px;
+  padding: 2px 5px;
+  background: $secondary-color;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.btn {
+  margin-top: 20px;
+  background: $secondary-color;
+  color: #fff;
+  padding: 15px 30px;
+  border: none;
+  outline: none;
+  border-radius: 30px;
+  font-weight: 700;
+  transition: 0.5s;
+  font-size: 16px;
+  float: right;
+}
+
+.btn:hover {
+  background: #000;
+}
+
+.footer {
+  width: 100%;
+  text-align: center;
+  margin-top: 860px;
+}
+
+.footer h3 {
+  font-weight: 600;
+}
+
+.footer p {
+  color: white;
+}
+
+.icons {
+  margin-bottom: 10px;
+}
+
+.icons .fab {
+  color: white;
+  margin: 0 14px;
+  cursor: pointer;
+}
+
+.icons a {
+  text-decoration: none;
+}
+
+.icons .fab:hover.fa-facebook {
+  color: #316ff6;
+}
+
+.icons .fab:hover.fa-instagram {
+  color: #e4405f;
+}
+
+@media (max-width: 480px) {
+  .wrapper {
+    width: 80%; 
+    max-width: none;
+    top: 48%;
+  }
+}
+
+@media (min-width:480px) and (max-width: 768px) {
+  .wrapper {
+    width: 80%; 
+    max-width: none;
+    top: 48%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .wrapper {
+    top: 48%;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1200px) {
+  .wrapper {
+    top: 48%;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1440px) {
+  .wrapper {
+    top: 48%;
+  }
+}
+
+@media (min-width: 1440px) and (max-width: 1920px) {
+  .wrapper {
+    top: 68%;
+  }
+}
+
+@media (min-width: 1920px) {
+  .wrapper {
+    top: 48%;
+  }
+}
+
