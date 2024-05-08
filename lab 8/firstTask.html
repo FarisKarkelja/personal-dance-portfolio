@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AJAX Table</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link href="style.css" rel="stylesheet" />
+
+<script>
+$(document).ready(function(){
+    $.ajax({
+        url: 'languages.json',
+        dataType: 'json',
+        success: function(data) {
+            constructTable(data);
+        }
+    });
+
+    function constructTable(data) {
+        var table = $('<table>').addClass('table');
+        var header = $('<tr>').append(
+            $('<th>').text('Code'),
+            $('<th>').text('Name')
+        );
+        table.append(header);
+
+        $.each(data, function(key, value) {
+            var row = $('<tr>').append(
+                $('<td>').text(value.code),
+                $('<td>').text(value.name)
+            );
+            table.append(row);
+        });
+
+        $('#tableContainer').append(table);
+    }
+});
+
+</script>
+
+</head>
+
+<body>
+
+    <div id="tableContainer"></div>
+
+</body>
+
+</html>

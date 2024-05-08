@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Exercise</title>
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" />
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <main>
+        <div class="container">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <i class="fas fa-table me-1"></i>
+                    Employees
+                </div>
+                <div class="card-body">
+                    <div class="mb-3" style="display: flex;justify-content: flex-end;">
+                        <input id="searchInput" type="text" class="form-control" placeholder="Search...">
+                    </div>
+                    <div class="table-responsive">
+                        <table id="employeeTable" class="table table-hover" >
+                            <thead style="text-align: left;">
+                                <tr>
+                                    <th>Name <i class="fas fa-sort"></i></th>
+                                    <th>Position <i class="fas fa-sort"></i></th>
+                                    <th>Office <i class="fas fa-sort"></i></th>
+                                    <th>Age <i class="fas fa-sort"></i></th>
+                                    <th>Start date <i class="fas fa-sort"></i></th>
+                                    <th>Salary <i class="fas fa-sort"></i></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Prescott Bartlett</td>
+                                    <td>Technical Author</td>
+                                    <td>London</td>
+                                    <td>27</td>
+                                    <td>2011/05/07</td>
+                                    <td>$145,000</td>
+                                </tr>
+                                <tr>
+                                    <td>Gavin Cortez</td>
+                                    <td>Team Leader</td>
+                                    <td>San Francisco</td>
+                                    <td>22</td>
+                                    <td>2008/10/26</td>
+                                    <td>$235,500</td>
+                                </tr>
+                                <tr>
+                                    <td>Lael Greer</td>
+                                    <td>Systems Administrator</td>
+                                    <td>London</td>
+                                    <td>21</td>
+                                    <td>2009/02/27</td>
+                                    <td>$103,500</td>
+                                </tr>
+                                <tr>
+                                    <td>Gloria Little</td>
+                                    <td>Systems Administrator</td>
+                                    <td>New York</td>
+                                    <td>59</td>
+                                    <td>2009/04/10</td>
+                                    <td>$237,500</td>
+                                </tr>
+                                <tr>
+                                    <td>Tiger Nixon</td>
+                                    <td>System Architect</td>
+                                    <td>Edinburgh</td>
+                                    <td>61</td>
+                                    <td>2011/04/25</td>
+                                    <td>$320,800</td>
+                                </tr>
+                                <tr>
+                                    <td>Quinn Flynn</td>
+                                    <td>Support Lead</td>
+                                    <td>Edinburgh</td>
+                                    <td>22</td>
+                                    <td>2013/03/03</td>
+                                    <td>$342,000</td>
+                                </tr>
+                                <tr>
+                                    <td>Sakura Yamamoto</td>
+                                    <td>Support Engineer</td>
+                                    <td>Tokyo</td>
+                                    <td>37</td>
+                                    <td>2009/08/19</td>
+                                    <td>$139,575</td>
+                                </tr>
+                                <tr>
+                                    <td>Olivia Liang</td>
+                                    <td>Support Engineer</td>
+                                    <td>Singapore</td>
+                                    <td>64</td>
+                                    <td>2011/02/03</td>
+                                    <td>$234,500</td>
+                                </tr>
+                                <tr>
+                                    <td>Finn Camacho</td>
+                                    <td>Support Engineer</td>
+                                    <td>San Francisco</td>
+                                    <td>47</td>
+                                    <td>2009/07/07</td>
+                                    <td>$87,500</td>
+                                </tr>
+                                <tr>
+                                    <td>Zorita Serrano</td>
+                                    <td>Software Engineer</td>
+                                    <td>San Francisco</td>
+                                    <td>56</td>
+                                    <td>2012/06/01</td>
+                                    <td>$115,000</td>
+                                </tr>     
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                </div>
+                <div class="modal-body">
+                </div>
+            </div>
+        </div>        
+    </main>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+<script>
+    $(document).ready(function () {
+        var employees = [
+    { 
+        name: "Prescott Bartlett", 
+        id: "123456789",
+        position: "Technical Author", 
+        office: "London", 
+        age: 27, 
+        startDate: "2011/05/07", 
+        salary: "$145,000", 
+        department: "Documentation", 
+        attendance: "Present", 
+        skills: "Technical writing, Editing", 
+        certifications: "Certified Technical Writer",
+        image: './assets/e10.jpg' 
+    },
+    { 
+        name: "Gavin Cortez", 
+        id: "132456689",
+        position: "Team Leader", 
+        office: "San Francisco", 
+        age: 22, 
+        startDate: "2008/10/26", 
+        salary: "$235,500", 
+        department: "Management", 
+        attendance: "Present", 
+        skills: "Leadership, Project Management", 
+        certifications: "Project Management Professional (PMP)",
+        image: './assets/e8.jpg' 
+    },
+    { 
+        name: "Lael Greer", 
+        id: "1541567899",
+        position: "Systems Administrator", 
+        office: "London", 
+        age: 21, 
+        startDate: "2009/02/27", 
+        salary: "$103,500", 
+        department: "IT", 
+        attendance: "Present", 
+        skills: "System Administration, Networking", 
+        certifications: "Cisco Certified Network Associate (CCNA)",
+        image: './assets/e1.jpg' 
+    },
+    { 
+        name: "Gloria Little", 
+        id: "2334756899",
+        position: "Systems Administrator", 
+        office: "New York", 
+        age: 59, 
+        startDate: "2009/04/10", 
+        salary: "$237,500", 
+        department: "IT", 
+        attendance: "Present", 
+        skills: "System Administration, Database Management", 
+        certifications: "Microsoft Certified: Azure Administrator Associate",
+        image: './assets/e2.jpg' 
+    },
+    { 
+        name: "Tiger Nixon", 
+        id: "032546789",
+        position: "System Architect", 
+        office: "Edinburgh", 
+        age: 61, 
+        startDate: "2011/04/25", 
+        salary: "$320,800", 
+        department: "Engineering", 
+        attendance: "Present", 
+        skills: "System Architecture, Design Patterns", 
+        certifications: "AWS Certified Solutions Architect - Associate",
+        image:'./assets/e9.jpg'
+    },
+    { 
+        name: "Quinn Flynn", 
+        id: "1423056729",
+        position: "Support Lead", 
+        office: "Edinburgh", 
+        age: 22, 
+        startDate: "2013/03/03", 
+        salary: "$342,000", 
+        department: "Customer Support", 
+        attendance: "Present", 
+        skills: "Customer Service, Technical Support", 
+        certifications: "ITIL Foundation",
+        image:'./assets/e3.jpg' 
+    },
+    { 
+        name: "Sakura Yamamoto", 
+        id: "1134456781",
+        position: "Support Engineer", 
+        office: "Tokyo", 
+        age: 37, 
+        startDate: "2009/08/19", 
+        salary: "$139,575", 
+        department: "Customer Support", 
+        attendance: "Present", 
+        skills: "Technical Troubleshooting, Communication", 
+        certifications: "CompTIA A+",
+        image: './assets/e7.jpg' 
+    },
+    { 
+        name: "Olivia Liang", 
+        id: "5234756980",
+        position: "Support Engineer", 
+        office: "Singapore", 
+        age: 64, 
+        startDate: "2011/02/03", 
+        salary: "$234,500", 
+        department: "Customer Support", 
+        attendance: "Present", 
+        skills: "Problem Solving, Collaboration", 
+        certifications: "Cisco Certified Network Professional (CCNP)",
+        image: './assets/e4.jpg' 
+    },
+    { 
+        name: "Finn Camacho", 
+        id: "884325139",
+        position: "Support Engineer", 
+        office: "San Francisco", 
+        age: 47, 
+        startDate: "2009/07/07", 
+        salary: "$87,500", 
+        department: "Customer Support", 
+        attendance: "Present", 
+        skills: "Troubleshooting, Training", 
+        certifications: "Zend Certified PHP Engineer",
+        image: './assets/e6.jpg' 
+    },
+    { 
+        name: "Zorita Serrano", 
+        id: "334222558797",
+        position: "Software Engineer", 
+        office: "San Francisco", 
+        age: 56, 
+        startDate: "2012/06/01", 
+        salary: "$115,000", 
+        department: "Engineering", 
+        attendance: "Present", 
+        skills: "Software Development, Testing", 
+        certifications: "Microsoft Certified: Azure Developer Associate",
+        image: './assets/e5.jpg' 
+    },
+];
+
+        function populateTable(data) {
+        var tbody = $("#employeeTable tbody");
+        tbody.empty();
+        data.forEach(function (employee) {
+            var row = $("<tr>");
+            row.append($("<td>").text(employee.name));
+            row.append($("<td>").text(employee.position));
+            row.append($("<td>").text(employee.office));
+            row.append($("<td>").text(employee.age));
+            row.append($("<td>").text(employee.startDate));
+            row.append($("<td>").text(employee.salary));
+            tbody.append(row);
+        });
+    }
+    populateTable(employees);
+
+    $("th").click(function () {
+        var column = $(this).index();
+        var sortOrder = $(this).hasClass("asc") ? -1 : 1;
+
+        employees.sort(function (a, b) {
+            var aValue = a[Object.keys(a)[column]];
+            var bValue = b[Object.keys(b)[column]];
+
+            if (aValue < bValue) return -1 * sortOrder;
+            if (aValue > bValue) return 1 * sortOrder;
+            return 0;
+        });
+
+        $(this).siblings().removeClass("asc desc");
+        $(this).toggleClass("asc desc");
+
+        populateTable(employees);
+    });
+
+    $(document).on("input", "#searchInput", function () { 
+        var searchTerm = $(this).val().toLowerCase();
+
+        var filteredEmployees = employees.filter(function (employee) {
+            return employee.name.toLowerCase().includes(searchTerm);
+        });
+
+        populateTable(filteredEmployees);
+    });
+
+    $(document).on("mouseover", "#employeeTable tbody tr", function () { 
+        $(this).addClass("hover");
+    });
+
+    $(document).on("mouseout", "#employeeTable tbody tr", function () {
+        $(this).removeClass("hover");
+    });
+    
+$(document).on("click", "#employeeTable tbody tr", function () {
+    var employeeName = $(this).find("td:first").text();
+    var employee = employees.find(function (emp) {
+        return emp.name === employeeName;
+    });
+
+    var modalBody = $(".modal-content .modal-body");
+    modalBody.empty();
+
+    var title = $("<h5>").addClass("text-primary").text("Employee Information - " + employee.name).css("color", "#051650");
+    modalBody.append(title);
+    var borderLine = $("<hr>").addClass("border-primary");
+    modalBody.append(borderLine);
+    var imageContainer = $("<div>").addClass("mtable").css("display" ,"flex").css("justify-content","flex-start").css("margin-left", "50px").css("margin-top", "30px")
+    var image = $("<img>").attr("src", employee.image).addClass("rounded-circle mr-3").css("width", "100px").css("height", "100px").css("border-radius","50px").css("object-fit","cover");
+    imageContainer.append(image);
+
+    var tableContainer = $("<div>").addClass("flex-grow-1").css({"padding-left": "100px"});
+    var table = $("<table>").addClass("table table-bordered").css("border-collapse", "collapse");
+    var tbody = $("<tbody>").css("border", "3px solid #051650");
+
+    var employeeDetails = [
+        { label: "Employee ID", value: employee.id },
+        { label: "First Name", value: employee.name.split(' ')[0] },
+        { label: "Last Name", value: employee.name.split(' ')[1] },
+        { label: "Department", value: employee.department },
+        { label: "Attendance", value: employee.attendance },
+        { label: "Skills", value: employee.skills },
+        { label: "Certifications", value: employee.certifications }
+    ];
+
+    employeeDetails.forEach(function (detail) {
+        var row = $("<tr>");
+        row.append($("<td>").text(detail.label));
+        row.append($("<td>").text(detail.value));
+        tbody.append(row);
+    });
+
+    table.append(tbody);
+    tableContainer.append(table);
+    imageContainer.append(tableContainer);
+    modalBody.append(imageContainer);
+    table.find("td, th").css("border", "3px solid #051650");
+
+    $("#myModal").css("display", "block");
+});
+
+    $(".modal .close, .modal").click(function (e) {
+        if ($(e.target).hasClass("modal") || $(e.target).hasClass("close")) {
+            $("#myModal").css("display", "none");
+        }
+    });
+
+});
+
+</script>
+
+</body>
+
+</html>

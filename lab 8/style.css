@@ -1,0 +1,25 @@
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 2px solid black;
+}
+
+.table th {
+    background-color: #ffffff;
+    border: 2px solid #000000;
+    padding: 8px;
+    text-align: left;
+}
+
+.table td {
+    border: 2px solid #000000;
+    padding: 8px;
+}
+
+.table tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+.table tr:hover {
+    background-color: lightgray;
+}
