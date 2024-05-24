@@ -36,15 +36,15 @@
 }
 
 /* Header */
-
+/*
 .header {
     min-height: 100vh;
     width: 100%;
 }
-
+*/
 /* Body */
 
-body {
+.index {
     background-color: var(--secondary-color);
 }
 
@@ -310,7 +310,7 @@ nav ul li a{
     width: 80%;
     margin: auto;
     text-align: center;
-    margin-top: 100px;
+    margin-top: 760px;
 }
 
 .aboutH1 {
@@ -331,10 +331,16 @@ p {
     padding: 10px;
 }
 
-@media (max-width: 1180px) {
+@media (max-width: 700px) {
     .about {
-        margin-top: -400px;
+        margin-top: 440px;
     }
+}
+
+@media (min-width: 701px) and (max-width: 1180px) {
+  .about {
+      margin-top: 640px;
+  }
 }
 
 /* Projects Section - Main Page */
@@ -605,124 +611,124 @@ p {
 
 /* Projects Section - Seperate Page */
 
-.projects-body {
-    background-color: var(--secondary-color);
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 80px auto 80px auto;
 }
 
-.projects-body p {
-  color: #000000;
+.timeline::after {
+  content: '';
+  position: absolute;
+  background-color: var(--primary-color);
+  width: 6px;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+.container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+.container::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: var(--primary-color);
+  border: 4px solid #d4af37;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  left: 50%;
+}
+
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid var(--primary-color);
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent var(--primary-color);
+}
+
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid var(--primary-color);
+  border-width: 10px 10px 10px 0;
+  border-color: transparent var(--primary-color) transparent transparent;
+}
+
+.right::after {
+  left: -16px;
 }
 
 .box-title {
-    color: #d4af37;
+  color: #d4af37;
 }
 
-.main-timeline {
-    position: relative;
-  }
-  
-  .main-timeline::after {
-    content: "";
-    position: absolute;
-    width: 6px;
-    background-color: var(--primary-color);
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    margin-left: -3px;
-  }
-  
-  .timeline {
-    position: relative;
-    background-color: inherit;
-    width: 50%;
-  }
-  
+.content {
+  padding: 20px 30px;
+  background-color: var(--primary-color);
+  position: relative;
+  border-radius: 6px;
+  color: var(--secondary-color);
+}
+
+@media screen and (max-width: 600px) {
   .timeline::after {
-    content: "";
-    position: absolute;
-    width: 25px;
-    height: 25px;
-    right: -13px;
-    background-color: var(--secondary-color);
-    border: 5px solid var(--primary-color);
-    top: 15px;
-    border-radius: 50%;
-    z-index: 1;
+    left: 31px;
   }
-  
-  .left {
-    padding: 0px 40px 20px 0px;
-    left: 0;
+
+  .container {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
   }
-  
-  .right {
-    padding: 0px 0px 20px 40px;
-    left: 50%;
-  }
-  
-  .left::before {
-    content: " ";
-    position: absolute;
-    top: 18px;
-    z-index: 1;
-    right: 30px;
-    border: medium solid var(--primary-color);
-    border-width: 10px 0 10px 10px;
-    border-color: transparent transparent transparent var(--primary-color);
-  }
-  
-  .right::before {
-    content: " ";
-    position: absolute;
-    top: 18px;
-    z-index: 1;
-    left: 30px;
+
+  .container::before {
+    left: 60px;
     border: medium solid var(--primary-color);
     border-width: 10px 10px 10px 0;
     border-color: transparent var(--primary-color) transparent transparent;
   }
-  
-  .right::after {
-    left: -12px;
+
+  .left::after, .right::after {
+    left: 15px;
   }
-  
-  @media screen and (max-width: 600px) {
-    .main-timeline::after {
-      left: 31px;
-    }
-  
-    .timeline {
-      width: 100%;
-      padding-left: 70px;
-      padding-right: 25px;
-    }
-  
-    .timeline::before {
-      left: 60px;
-      border: medium solid white;
-      border-width: 10px 10px 10px 0;
-      border-color: transparent white transparent transparent;
-    }
-  
-    .left::after,
-    .right::after {
-      left: 18px;
-    }
-  
-    .left::before {
-      right: auto;
-    }
-  
-    .right {
-      left: 0%;
-    }
+
+ .right {
+    left: 0%;
   }
+}
 
 /* Gallery Section - Seperate Page */
 
 .gallery {
-    margin-top: 2rem;
+    margin-top: 4rem;
     text-align: center;
     padding: 10px;
 }
@@ -834,4 +840,3 @@ p {
 .icons .fab:hover.fa-instagram {
     color: #e4405f;
 }
-
