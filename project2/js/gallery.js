@@ -15,5 +15,3 @@ function openModal(pic) {
   wrapper.style.display = "flex";
   imgWrapper.src = pic;
 }
-
-

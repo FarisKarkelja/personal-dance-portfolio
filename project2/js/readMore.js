@@ -1,17 +1,17 @@
-const parentContainer =  document.querySelector('.about-section');
+const parentContainer = document.querySelector(".about-section");
 
-parentContainer.addEventListener('click', event=>{
+parentContainer.addEventListener("click", (event) => {
+  const current = event.target;
 
-    const current = event.target;
+  const isReadMoreBtn = current.className.includes("read-more-btn");
 
-    const isReadMoreBtn = current.className.includes('read-more-btn');
+  if (!isReadMoreBtn) return;
 
-    if(!isReadMoreBtn) return;
+  const currentText = event.target.parentNode.querySelector(".read-more-text");
 
-    const currentText = event.target.parentNode.querySelector('.read-more-text');
+  currentText.classList.toggle("read-more-text--show");
 
-    currentText.classList.toggle('read-more-text--show');
-
-    current.textContent = current.textContent.includes('Read More') ? "Read Less" : "Read More";
-
-})
+  current.textContent = current.textContent.includes("Read More")
+    ? "Read Less"
+    : "Read More";
+});
