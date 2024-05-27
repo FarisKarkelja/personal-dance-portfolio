@@ -1,0 +1,170 @@
+.contact-body {
+  display: flex;
+  padding: 0 10px;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.contactWrapper {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  width: 715px;
+  background: var(--primary-color);
+  border-radius: 15px;
+  box-shadow: 8px 8px 8px #d4af37;
+}
+.contactWrapper header {
+  font-size: 22px;
+  font-weight: 600;
+  padding: 20px 30px;
+  border-bottom: 2px solid var(--secondary-color);
+  color: var(--secondary-color);
+}
+.contactWrapper form {
+  margin: 35px 30px;
+}
+.contactWrapper form.disabled {
+  pointer-events: none;
+  opacity: 0.7;
+}
+.contactWrapper form .dbl-field {
+  display: flex;
+  margin-bottom: 25px;
+  justify-content: space-between;
+}
+.contactWrapper form .dbl-field .field {
+  height: 50px;
+  display: flex;
+  position: relative;
+  width: calc(50% - 13px);
+}
+.contactWrapper form i {
+  position: absolute;
+  top: 50%;
+  left: 18px;
+  color: black;
+  font-size: 17px;
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+.contactWrapper form .field input {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  padding: 0 18px 0 48px;
+  font-size: 16px;
+  border-radius: 15px;
+  border: 2px solid var(--secondary-color);
+}
+.contactWrapper form .field input::-moz-placeholder {
+  color: black;
+}
+.contactWrapper form .field input::placeholder {
+  color: black;
+}
+.contactWrapper form .field input:focus {
+  padding-left: 47px;
+  border: 2px solid #d4af37;
+}
+.contactWrapper form .field input:focus ~ i {
+  color: #d4af37;
+}
+.contactWrapper form .message {
+  position: relative;
+}
+.contactWrapper form .message i {
+  top: 30px;
+  font-size: 20px;
+}
+.contactWrapper form .message textarea {
+  width: 100%;
+  min-height: 130px;
+  max-height: 230px;
+  outline: none;
+  padding: 15px 20px 0 48px;
+  font-size: 16px;
+  border-radius: 15px;
+  border: 2px solid var(--secondary-color);
+  resize: none;
+}
+.contactWrapper form .message textarea::-moz-placeholder {
+  color: black;
+}
+.contactWrapper form .message textarea::placeholder {
+  color: black;
+}
+.contactWrapper form .message textarea::-webkit-scrollbar {
+  width: 0px;
+}
+.contactWrapper form .message textarea:focus {
+  padding-top: 14px;
+  border: 2px solid #d4af37;
+}
+.contactWrapper form .message textarea:focus ~ i {
+  color: #d4af37;
+}
+.contactWrapper form .button-area {
+  margin: 25px 0;
+  display: flex;
+  align-items: center;
+}
+.contactWrapper form .button-area button {
+  color: var(--primary-color);
+  border: none;
+  outline: none;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 15px;
+  padding: 13px 25px;
+  background: #d4af37;
+  transition: background 0.3s ease;
+}
+.contactWrapper form .button-area button:hover {
+  background: var(--secondary-color);
+}
+.contactWrapper form .button-area span {
+  font-size: 17px;
+  margin-left: 30px;
+  display: none;
+}
+
+@media (max-width: 1180px) {
+  .contactWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 40px;
+  }
+  .contactWrapper header {
+    text-align: center;
+  }
+  .contactWrapper form {
+    margin: 35px 20px;
+  }
+  .contactWrapper form .dbl-field {
+    flex-direction: column;
+    margin-bottom: 0px;
+  }
+  .contactWrapper form .dbl-field .field {
+    width: 100%;
+    height: 45px;
+    margin-bottom: 20px;
+  }
+  .contactWrapper form .message textarea {
+    resize: none;
+  }
+  .contactWrapper form .button-area {
+    margin-top: 20px;
+    flex-direction: column;
+  }
+  .contactWrapper form .button-area button {
+    width: 100%;
+    padding: 11px 0;
+    font-size: 16px;
+  }
+  .contactWrapper form .button-area span {
+    margin: 20px 0 0;
+    text-align: center;
+  }
+}/*# sourceMappingURL=style.css.map */

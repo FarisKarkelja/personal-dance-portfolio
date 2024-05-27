@@ -1,0 +1,252 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="../scss/style.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="icon" type="image/x-icon" href="../favIcon/favicon.ico">
+</head>
+
+<body>
+
+<section class="header">
+
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+          <i class="fas fa-bars"></i>
+        </label>
+        <label class="logo">FK</label>
+        <ul>
+          <li><a href="home.html" class="navbar-link">Home</a></li>
+          <li><a href="about.html" class="navbar-link">About</a></li>
+          <li><a href="projects.html" class="navbar-link">Projects</a></li>
+          <li><a href="gallery.html" class="navbar-link">Gallery</a></li>
+          <li><a href="contact.html" class="navbar-link">Contact</a></li>
+        </ul>
+    
+        <img src="../themeSwitch/sun.png" id="icon">
+    
+      </nav>
+    -->      
+
+<div class="contact-body">
+  <div class="contactWrapper">
+      <header>Dance Class Registration</header>
+      <form id="danceClassForm" name="danceClassForm" autocomplete="off">
+
+        <div class="dbl-field">
+
+          <div class="field">
+            <input type="text" class="form-control" id="name" name="name" placeholder="First Name" required>
+            <i class='fas fa-user'></i>
+          </div>
+
+          <div class="field">
+            <input type="text" class="form-control" id="name" name="name" placeholder="Last Name" required>
+            <i class='fas fa-user'></i>
+          </div>
+        </div>
+
+        <div class="dbl-field">
+
+          <div class="field">
+            <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone No." required>
+            <i class='fas fa-phone'></i>
+          </div>
+        
+          <div class="field">
+            <input type="text" class="form-control" id="date" name="date" onfocus="this.type='date'" placeholder="Date Of Birth" required>
+            <i class='fas fa-calendar'></i>
+          </div>
+
+        </div>
+
+        <div class="dbl-field">
+
+          <div class="field">
+            <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+            <i class='fas fa-envelope'></i>
+          </div>
+
+          <div class="field">
+            <input type="password" class="form-control" id="password" name="password" placeholder="Password" minlength="8" required>
+            <i class='fas fa-lock'></i>
+          </div>
+
+        </div>
+
+        <div class="dbl-field">
+
+          <div class="field">
+            <input type="text" class="form-control" id="date" name="date" onfocus="this.type='date'" placeholder="Preferred Date" required>
+            <i class='fas fa-calendar'></i>
+          </div>
+          
+          <div class="field">
+            <input type="text" class="form-control" id="time" name="time" onfocus="this.type='time'" placeholder="Preferred Time" required>
+            <i class='fas fa-clock'></i>
+          </div>
+        
+        </div>
+
+        <div class="message">
+          <textarea placeholder="Additional Information (e.g., experience, skill level, goals)" name="message" required></textarea>
+          <i class='fas fa-message'></i>
+        </div>
+
+        <div class="button-area">
+          <button type="submit" class="btn btn-primary">Register</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+  
+<div class="contact-body">
+  <div class="contactWrapper">
+      <header>Contact Me</header>
+      <form id="contactForm" name="contactForm" autocomplete="off">
+
+        <div class="dbl-field">
+
+          <div class="field">
+            <input type="text" class="form-control" id="name" name="name" placeholder="Full Name" required>
+            <i class='fas fa-user'></i>
+          </div>
+
+          <div class="field">
+            <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone No." required>
+            <i class='fas fa-phone'></i>
+          </div>
+        </div>
+
+        <div class="dbl-field">
+
+          <div class="field">
+            <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+            <i class='fas fa-envelope'></i>
+          </div>
+
+          <div class="field">
+            <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
+            <i class='fas fa-paperclip'></i>
+          </div>
+
+        </div>
+
+        <div class="message">
+          <textarea placeholder="Message" id="message" name="message" rows="15" required></textarea>
+          <i class='fas fa-message'></i>
+        </div>
+
+        <div class="button-area">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+<!--
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+-->
+
+<script>
+
+$("#contactForm").validate({
+        rules: {
+            name: {
+                required: true,
+                minlength: 2
+            },
+            phone: {
+                required: true,
+                minlength: 10,
+                maxlength: 10
+            },
+            email: {
+                required: true,
+                email: true
+            },
+            subject: {
+                required: true
+            },
+            message: {
+                required: true
+            }
+        },
+        messages: {
+            name: {
+                required: "Please enter your name",
+                minlength: "Name must be at least 2 characters"
+            },
+            phone: {
+                required: "Please enter your phone number",
+                minlength: "Phone number must be 10 digits",
+                maxlength: "Phone number must be 10 digits"
+            },
+            email: {
+                required: "Please enter your email",
+                email: "Please enter a valid email address"
+            },
+            subject: "Please enter the subject",
+            message: "Please enter your message"
+        },
+        submitHandler: function (form) {
+        try {
+            // Block UI on form submission
+            $.blockUI({ message: '<div class="spinner-border" role="status"><span class="visually-hidden">Loading...</span></div>' });
+            // Reset the form
+            $(form)[0].reset();
+            // Unblock UI after request is complete
+
+            setTimeout(function(){
+                console.log('time out')
+                $.unblockUI();
+            }, 3000)
+            
+        } catch (error) {
+            console.error('Error in submitHandler:', error);
+            alert('An error occurred. Please try again later.');
+            // Unblock UI after request is complete
+            $.unblockUI();
+        }
+      }
+});
+
+</script>
+
+
+
+
+
+<!--<section class="footer">
+
+        <div class="icons">
+
+            <a href="https://www.facebook.com/faris.karkelja" target="_blank">
+                <i class="fab fa-facebook"></i>
+            </a>
+
+            <a href="https://www.instagram.com/faris.karkelja" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+
+        </div>
+
+        <p>&copy; 2024 Faris Karkelja. All rights reserved.</p>
+    
+    </section>
+
+    <script src="../js/themeSw.js"></script>
+
+</body>
+
+</html>-->
