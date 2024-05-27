@@ -14,7 +14,7 @@
 
 ## Description
 
-Welcome to my project! This is a Dance Portfolio Website made to represent my dance career and to provide users with sevaral information, including biography, gallery, list of projects and performances and also the ability to contact me for further questions and necessary information. I hope you enjoy and I look forward to your contributions! 
+Welcome to my project! This is a Dance Portfolio Website made to represent my dance career and to provide users with sevaral information, including biography, gallery, list of projects and performances and also the ability to register a dance class and contact me for further questions and necessary information. I hope you enjoy and I look forward to your contributions! 
 
 - HTML
 - CSS
@@ -38,8 +38,10 @@ Welcome to my project! This is a Dance Portfolio Website made to represent my da
 4. Gallery:
   - Explore a collection of professionally captured images showcasing various dance events, achievements, performances and moments.
     
-5. Contact:
+5. Inquiry:
+  - Sign up for a dance class through the detailed dance class registration form.
   - Reach out to me professionaly through the contact form.
+    
 
 ## Installation
 
@@ -65,8 +67,12 @@ No installation is required to run this project. Simply open the project folder 
 
 ### Contact Me:
 - Reach out to me through the "Contact Me" section.
-- Fill out the contact form with your name, email, subject, and message.
+- Fill out the contact form with your name, email, phone number, subject, and message.
 - I'll get back to you as soon as possible to discuss collaborations, performances, or any inquiries.
+
+### Dance Class Registration:
+- Fill out the registration form with your full name, phone number, email, password, preferred date and time, preferred dance style, and some additional information you find necessary.
+- I'll get back to you as soon as possible with the provided details about the dance class.
 
 ### Social Media:
 - Connect with me on social media platforms such as Facebook or Instagram available in the footer section of the website.
