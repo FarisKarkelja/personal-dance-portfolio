@@ -1,4 +1,4 @@
-<div class="contact-body">
+<!--<div class="contact-body">
   <div class="contactWrapper">
     <header>Dance Class Registration</header>
     <form id="danceClassForm" name="danceClassForm" autocomplete="off">
@@ -125,7 +125,7 @@
     </form>
   </div>
 </div>
-
+-->
 <div class="contact-body">
   <div class="contactWrapper">
     <header>Contact Me</header>
@@ -194,78 +194,95 @@
       </div>
 
       <div class="button-area">
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary" id="submitBtn">
+          Submit
+        </button>
       </div>
     </form>
   </div>
 </div>
 
-<!--
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
--->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.min.js"></script>
 
 <script>
-  $("#contactForm").validate({
-    rules: {
-      name: {
-        required: true,
-        minlength: 2,
+  $(document).ready(function () {
+    $("#contactForm").validate({
+      rules: {
+        name: {
+          required: true,
+          minlength: 2,
+        },
+        phone: {
+          required: true,
+          minlength: 10,
+          maxlength: 10,
+        },
+        email: {
+          required: true,
+          email: true,
+        },
+        subject: {
+          required: true,
+        },
+        message: {
+          required: true,
+        },
       },
-      phone: {
-        required: true,
-        minlength: 10,
-        maxlength: 10,
+      messages: {
+        name: {
+          required: "Please enter your name",
+          minlength: "Name must be at least 2 characters",
+        },
+        phone: {
+          required: "Please enter your phone number",
+          minlength: "Phone number must be 10 digits",
+          maxlength: "Phone number must be 10 digits",
+        },
+        email: {
+          required: "Please enter your email",
+          email: "Please enter a valid email address",
+        },
+        subject: "Please enter the subject",
+        message: "Please enter your message",
       },
-      email: {
-        required: true,
-        email: true,
-      },
-      subject: {
-        required: true,
-      },
-      message: {
-        required: true,
-      },
-    },
-    messages: {
-      name: {
-        required: "Please enter your name",
-        minlength: "Name must be at least 2 characters",
-      },
-      phone: {
-        required: "Please enter your phone number",
-        minlength: "Phone number must be 10 digits",
-        maxlength: "Phone number must be 10 digits",
-      },
-      email: {
-        required: "Please enter your email",
-        email: "Please enter a valid email address",
-      },
-      subject: "Please enter the subject",
-      message: "Please enter your message",
-    },
-    submitHandler: function (form) {
-      try {
-        // Block UI on form submission
-        $.blockUI({
-          message:
-            '<div class="spinner-border" role="status"><span class="visually-hidden">Loading...</span></div>',
-        });
-        // Reset the form
-        $(form)[0].reset();
-        // Unblock UI after request is complete
+      submitHandler: function (form, event) {
+        event.preventDefault(); // Prevent the default form submission
+        try {
+          // Block UI on form submission
+          $.blockUI({
+            message:
+              '<div class="spinner-border" role="status"><span class="visually-hidden">Loading...</span></div>',
+          });
 
-        setTimeout(function () {
-          console.log("time out");
+          // AJAX form submission
+          $.ajax({
+            type: "POST",
+            url: "form.php", // Replace with your backend URL
+            data: $(form).serialize(), // Serialize form data
+            success: function (response) {
+              // Show success message
+              alert("Form submitted successfully!");
+              // Reset the form
+              $(form)[0].reset();
+              // Unblock UI after request is complete
+              $.unblockUI();
+            },
+            error: function (xhr, status, error) {
+              console.error(xhr.responseText);
+              alert("An error occurred. Please try again later.");
+              // Unblock UI after request is complete
+              $.unblockUI();
+            },
+          });
+        } catch (error) {
+          console.error("Error in submitHandler:", error);
+          alert("An error occurred. Please try again later.");
+          // Unblock UI after request is complete
           $.unblockUI();
-        }, 3000);
-      } catch (error) {
-        console.error("Error in submitHandler:", error);
-        alert("An error occurred. Please try again later.");
-        // Unblock UI after request is complete
-        $.unblockUI();
-      }
-    },
+        }
+      },
+    });
   });
 </script>

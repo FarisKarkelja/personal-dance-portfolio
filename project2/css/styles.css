@@ -516,6 +516,18 @@ p {
   transition: all 0.2s linear;
 }
 
+.faqContentToggle {
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 15px;
+  color: var(--secondary-color);
+  padding: 15px 32px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 400px;
+}
+
 .faqH1 {
   font-size: 36px;
   font-weight: 600;
@@ -523,6 +535,60 @@ p {
   text-align: center;
   position: absolute;
   margin-bottom: 600px;
+}
+
+/* FAQ User Question - Main Page */
+
+.faqQuestion {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto; 
+  margin-bottom: 120px;
+  padding: 20px;
+  background-color: var(--primary-color);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+}
+
+.faqQuestion h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  color: var(--secondary-color);
+}
+
+.faqQuestion form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.faqQuestion input[type="text"] {
+  padding: 10px;
+  font-size: 14px;
+  border: 2px solid var(--secondary-color);
+  border-radius: 8px;
+}
+
+.faqQuestion input[type="text"]:focus {
+  outline: none; 
+  border-color: #d4af37; 
+}
+
+.faqQuestion button {
+  padding: 10px;
+  font-size: 14px;
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.faqQuestion button:hover {
+  background-color: #d4af37;
 }
 
 /* About Section - Seperate Page */
@@ -872,6 +938,14 @@ p {
 
 .icons .fab:hover.fa-instagram {
   color: #e4405f;
+}
+
+.icons .fab:hover.fa-linkedin {
+  color: #d4af37;
+}
+
+.icons .fab:hover.fa-github {
+  color: #50C878;
 }
 
 /* View More Seperate Page */

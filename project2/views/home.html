@@ -20,44 +20,20 @@
 
 <section class="projects">
   <h1 class="projectsH1">Projects</h1>
-
-  <div class="row">
-    <div class="projects-column">
-      <h3 class="projectsH3">#SSC</h3>
-      <p>
-        An indescribable experience of working and sharing the stage with
-        world-class professionals ranging form Cuba, Mexico, Italy, and beyond
-        at the Sarajevo Salsa Congress.
-      </p>
-    </div>
-
-    <div class="projects-column">
-      <h3 class="projectsH3">Erasmus+</h3>
-      <p>
-        Unforgettable journey with the Erasmus+ Programme located in Montecatini
-        Terme, Italy, where joy and optimism filled the air alongside dance and
-        socialization.
-      </p>
-    </div>
-
-    <div class="projects-column">
-      <h3 class="projectsH3">Supert&#9733;lent</h3>
-      <p>
-        Second-ever dance performance on the stages of the Supertalent Show
-        resulted in success, with the judges' acknowledgment serving as the wind
-        at one's back.
-      </p>
-    </div>
+  <div class="row" id="projectsContainer">
+    <!-- Projects content is loaded from json file -->
   </div>
 </section>
 
-<div class="viewMore-container">
-  <a href="/project2/views/viewMore.html"
-    ><button class="viewMore-btn">
+<script src="../project2/js/projects.js"></script>
+
+<div class="viewMore-container"> 
+  <button class="viewMore-btn" onclick="redirectToViewMore()">
       <i class="fa-solid fa-eye"></i><span class="btn-text">View more</span>
-    </button></a
-  >
+    </button>
 </div>
+
+<script src="../project2/js/vM.js"></script>
 
 <section class="photos">
   <h1 class="galleryH1">Gallery</h1>
@@ -99,14 +75,21 @@
 <section class="faq">
   <h1 class="faqH1">FAQ</h1>
 
-  <div class="accordion">
+  <button class="faqContentToggle">Show</button>
+
+  <div class="accordion" style="display: none;">
     <div class="accordion-content">
       <header>
         <span class="title">How did your dance journey begin?</span>
         <i class="fa-solid fa-plus"></i>
       </header>
 
-      <p class="description">Answer will be provided soon.</p>
+      <p class="description">
+        My dance journey began in Sarajevo, where I was born and raised. I was
+        inspired by the vibrant local scene and started taking classes at a
+        young age. My passion for dance grew as I participated in various local
+        performances and eventually, international projects.
+      </p>
     </div>
 
     <div class="accordion-content">
@@ -115,7 +98,12 @@
         <i class="fa-solid fa-plus"></i>
       </header>
 
-      <p class="description">Answer will be provided soon.</p>
+      <p class="description">
+        Dancers often face physical challenges such as injuries and fatigue.
+        Mentally, staying motivated and dealing with performance anxiety can be
+        tough. Balancing practice with personal and professional commitments is
+        another common challenge a dancer would face on a daily basis.
+      </p>
     </div>
 
     <div class="accordion-content">
@@ -124,7 +112,11 @@
         <i class="fa-solid fa-plus"></i>
       </header>
 
-      <p class="description">Answer will be provided soon.</p>
+      <p class="description">
+        Yes, I offer both dance lessons and workshops. My lessons are designed
+        for various skill levels, from beginners to advanced dancers. I also
+        conduct workshops that focus on specific dance styles and techniques.
+      </p>
     </div>
 
     <div class="accordion-content">
@@ -133,7 +125,11 @@
         <i class="fa-solid fa-plus"></i>
       </header>
 
-      <p class="description">Answer will be provided soon.</p>
+      <p class="description">
+        While I enjoy many dance styles, my preferred style is Salsa. The
+        energy, rhythm, and passion involved in Salsa dancing resonate with me
+        deeply and allow me to express myself fully.
+      </p>
     </div>
 
     <div class="accordion-content">
@@ -144,31 +140,76 @@
         <i class="fa-solid fa-plus"></i>
       </header>
 
-      <p class="description">Answer will be provided soon.</p>
+      <p class="description">
+        Balancing a dance career with other commitments requires good time
+        management and setting priorities. I create a schedule that allocates
+        time for practice, performances, and other responsibilities. Staying
+        organized and setting clear goals helps maintain this balance.
+      </p>
     </div>
 
     <div class="accordion-content">
       <header>
         <span class="title"
-          >How to balance dance career with other commitments?</span
+          >What advice do you have for beginners in dance?</span
         >
         <i class="fa-solid fa-plus"></i>
       </header>
 
-      <p class="description">Answer will be provided soon.</p>
+      <p class="description">
+        My advice for beginners is to stay patient and consistent. Practice
+        regularly, even if it's just a little each day. Don't be afraid to make
+        mistakes, as they are part of the learning process. Most importantly,
+        enjoy the journey and have fun!
+      </p>
     </div>
 
     <div class="accordion-content">
       <header>
         <span class="title"
-          >How to balance dance career with other commitments?</span
+          >Can anyone learn to dance, regardless of age or experience?</span
         >
         <i class="fa-solid fa-plus"></i>
       </header>
 
-      <p class="description">Answer will be provided soon.</p>
+      <p class="description">
+        Absolutely! Dance is for everyone, regardless of age or experience. It's
+        never too late to start. With dedication and practice, anyone can learn
+        to dance and enjoy the numerous benefits it brings.
+      </p>
     </div>
   </div>
 </section>
+
+<script src="../project2/js/contentToggle.js"></script>
+
+<div class="faqQuestion">
+  <h2>Ask a Question</h2>
+  <form id="questionForm" autocomplete="off">
+    <input
+      type="text"
+      id="userQuestion"
+      name="userQuestion"
+      placeholder="Type your question here..."
+      required
+    />
+    <button type="button" id="success">Ask</button>
+  </form>
+</div>
+
+<script src="../project2/js/toastr.js"></script>
+
+<!-- jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Toastr -->
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"
+/>
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"
+></script>
 
 <script src="../project2/js/faq.js"></script>
