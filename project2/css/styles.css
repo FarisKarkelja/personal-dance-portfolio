@@ -542,14 +542,14 @@ p {
 .faqQuestion {
   width: 100%;
   max-width: 400px;
-  margin: 0 auto; 
+  margin: 0 auto;
   margin-bottom: 120px;
   padding: 20px;
   background-color: var(--primary-color);
   border-radius: 8px;
   display: flex;
-  flex-direction: column; 
-  align-items: center; 
+  flex-direction: column;
+  align-items: center;
 }
 
 .faqQuestion h2 {
@@ -572,8 +572,8 @@ p {
 }
 
 .faqQuestion input[type="text"]:focus {
-  outline: none; 
-  border-color: #d4af37; 
+  outline: none;
+  border-color: #d4af37;
 }
 
 .faqQuestion button {
@@ -945,7 +945,15 @@ p {
 }
 
 .icons .fab:hover.fa-github {
-  color: #50C878;
+  color: #50c878;
+}
+
+.map {
+  margin-bottom: 50px;
+  border-radius: 50%;
+  border: 4px solid var(--primary-color);
+  width: 240px;
+  height: 240px;
 }
 
 /* View More Seperate Page */

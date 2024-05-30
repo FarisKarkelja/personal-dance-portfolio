@@ -1,4 +1,4 @@
-<!--<div class="contact-body">
+<div class="contact-body">
   <div class="contactWrapper">
     <header>Dance Class Registration</header>
     <form id="danceClassForm" name="danceClassForm" autocomplete="off">
@@ -125,7 +125,7 @@
     </form>
   </div>
 </div>
--->
+
 <div class="contact-body">
   <div class="contactWrapper">
     <header>Contact Me</header>
@@ -246,6 +246,107 @@
         },
         subject: "Please enter the subject",
         message: "Please enter your message",
+      },
+      submitHandler: function (form, event) {
+        event.preventDefault(); // Prevent the default form submission
+        try {
+          // Block UI on form submission
+          $.blockUI({
+            message:
+              '<div class="spinner-border" role="status"><span class="visually-hidden">Loading...</span></div>',
+          });
+
+          // AJAX form submission
+          $.ajax({
+            type: "POST",
+            url: "form.php", // Replace with your backend URL
+            data: $(form).serialize(), // Serialize form data
+            success: function (response) {
+              // Show success message
+              alert("Form submitted successfully!");
+              // Reset the form
+              $(form)[0].reset();
+              // Unblock UI after request is complete
+              $.unblockUI();
+            },
+            error: function (xhr, status, error) {
+              console.error(xhr.responseText);
+              alert("An error occurred. Please try again later.");
+              // Unblock UI after request is complete
+              $.unblockUI();
+            },
+          });
+        } catch (error) {
+          console.error("Error in submitHandler:", error);
+          alert("An error occurred. Please try again later.");
+          // Unblock UI after request is complete
+          $.unblockUI();
+        }
+      },
+    });
+
+    $("#danceClassForm").validate({
+      rules: {
+        firstName: {
+          required: true,
+          minlength: 2,
+        },
+        lastName: {
+          required: true,
+          minlength: 2,
+        },
+        phone: {
+          required: true,
+          minlength: 10,
+          maxlength: 10,
+        },
+        dob: {
+          required: true,
+        },
+        email: {
+          required: true,
+          email: true,
+        },
+        password: {
+          required: true,
+          minlength: 8,
+        },
+        preferredDate: {
+          required: true,
+        },
+        preferredTime: {
+          required: true,
+        },
+        message: {
+          required: true,
+        },
+      },
+      messages: {
+        firstName: {
+          required: "Please enter your first name",
+          minlength: "First name must be at least 2 characters",
+        },
+        lastName: {
+          required: "Please enter your last name",
+          minlength: "Last name must be at least 2 characters",
+        },
+        phone: {
+          required: "Please enter your phone number",
+          minlength: "Phone number must be 10 digits",
+          maxlength: "Phone number must be 10 digits",
+        },
+        dob: "Please enter your date of birth",
+        email: {
+          required: "Please enter your email",
+          email: "Please enter a valid email address",
+        },
+        password: {
+          required: "Please enter a password",
+          minlength: "Password must be at least 8 characters",
+        },
+        preferredDate: "Please enter your preferred date",
+        preferredTime: "Please enter your preferred time",
+        message: "Please enter additional information",
       },
       submitHandler: function (form, event) {
         event.preventDefault(); // Prevent the default form submission

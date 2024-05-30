@@ -21,3 +21,5 @@ $(document).ready(function() {
 		$('#success').click(function(event) {
 			toastr.success('Question submitted successfully.');
 		});
+
+		
