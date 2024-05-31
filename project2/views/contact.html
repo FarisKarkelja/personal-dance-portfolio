@@ -7,9 +7,10 @@
           <input
             type="text"
             class="form-control"
-            id="name"
-            name="name"
+            id="firstName"
+            name="firstName"
             placeholder="First Name"
+            minlength="2"
             required
           />
           <i class="fas fa-user"></i>
@@ -19,9 +20,10 @@
           <input
             type="text"
             class="form-control"
-            id="name"
-            name="name"
+            id="lastName"
+            name="lastName"
             placeholder="Last Name"
+            minlength="2"
             required
           />
           <i class="fas fa-user"></i>
@@ -36,6 +38,8 @@
             id="phone"
             name="phone"
             placeholder="Phone No."
+            minlength="10"
+            maxlength="10"
             required
           />
           <i class="fas fa-phone"></i>
@@ -45,9 +49,10 @@
           <input
             type="text"
             class="form-control"
-            id="date"
-            name="date"
+            id="dob"
+            name="dob"
             onfocus="this.type='date'"
+            onblur="this.type='text'"
             placeholder="Date Of Birth"
             required
           />
@@ -82,6 +87,8 @@
         </div>
       </div>
 
+      <div id="passwordStrength"></div>
+
       <div class="dbl-field">
         <div class="field">
           <input
@@ -90,6 +97,7 @@
             id="date"
             name="date"
             onfocus="this.type='date'"
+            onblur="this.type='text'"
             placeholder="Preferred Date"
             required
           />
@@ -103,6 +111,7 @@
             id="time"
             name="time"
             onfocus="this.type='time'"
+            onblur="this.type='text'"
             placeholder="Preferred Time"
             required
           />
@@ -113,187 +122,28 @@
       <div class="message">
         <textarea
           placeholder="Additional Information (e.g., experience, skill level, goals)"
-          name="message"
-          required
+          id="info"
+          name="info"
         ></textarea>
         <i class="fas fa-message"></i>
       </div>
 
       <div class="button-area">
-        <button type="submit" class="btn btn-primary">Register</button>
+        <button type="submit">Register</button>
       </div>
     </form>
   </div>
 </div>
-
-<div class="contact-body">
-  <div class="contactWrapper">
-    <header>Contact Me</header>
-    <form id="contactForm" name="contactForm" autocomplete="off">
-      <div class="dbl-field">
-        <div class="field">
-          <input
-            type="text"
-            class="form-control"
-            id="name"
-            name="name"
-            placeholder="Full Name"
-            required
-          />
-          <i class="fas fa-user"></i>
-        </div>
-
-        <div class="field">
-          <input
-            type="text"
-            class="form-control"
-            id="phone"
-            name="phone"
-            placeholder="Phone No."
-            required
-          />
-          <i class="fas fa-phone"></i>
-        </div>
-      </div>
-
-      <div class="dbl-field">
-        <div class="field">
-          <input
-            type="email"
-            class="form-control"
-            id="email"
-            name="email"
-            placeholder="Email"
-            required
-          />
-          <i class="fas fa-envelope"></i>
-        </div>
-
-        <div class="field">
-          <input
-            type="text"
-            class="form-control"
-            id="subject"
-            name="subject"
-            placeholder="Subject"
-            required
-          />
-          <i class="fas fa-paperclip"></i>
-        </div>
-      </div>
-
-      <div class="message">
-        <textarea
-          placeholder="Message"
-          id="message"
-          name="message"
-          rows="15"
-          required
-        ></textarea>
-        <i class="fas fa-message"></i>
-      </div>
-
-      <div class="button-area">
-        <button type="submit" class="btn btn-primary" id="submitBtn">
-          Submit
-        </button>
-      </div>
-    </form>
-  </div>
-</div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.min.js"></script>
 
 <script>
   $(document).ready(function () {
-    $("#contactForm").validate({
-      rules: {
-        name: {
-          required: true,
-          minlength: 2,
-        },
-        phone: {
-          required: true,
-          minlength: 10,
-          maxlength: 10,
-        },
-        email: {
-          required: true,
-          email: true,
-        },
-        subject: {
-          required: true,
-        },
-        message: {
-          required: true,
-        },
-      },
-      messages: {
-        name: {
-          required: "Please enter your name",
-          minlength: "Name must be at least 2 characters",
-        },
-        phone: {
-          required: "Please enter your phone number",
-          minlength: "Phone number must be 10 digits",
-          maxlength: "Phone number must be 10 digits",
-        },
-        email: {
-          required: "Please enter your email",
-          email: "Please enter a valid email address",
-        },
-        subject: "Please enter the subject",
-        message: "Please enter your message",
-      },
-      submitHandler: function (form, event) {
-        event.preventDefault(); // Prevent the default form submission
-        try {
-          // Block UI on form submission
-          $.blockUI({
-            message:
-              '<div class="spinner-border" role="status"><span class="visually-hidden">Loading...</span></div>',
-          });
-
-          // AJAX form submission
-          $.ajax({
-            type: "POST",
-            url: "form.php", // Replace with your backend URL
-            data: $(form).serialize(), // Serialize form data
-            success: function (response) {
-              // Show success message
-              alert("Form submitted successfully!");
-              // Reset the form
-              $(form)[0].reset();
-              // Unblock UI after request is complete
-              $.unblockUI();
-            },
-            error: function (xhr, status, error) {
-              console.error(xhr.responseText);
-              alert("An error occurred. Please try again later.");
-              // Unblock UI after request is complete
-              $.unblockUI();
-            },
-          });
-        } catch (error) {
-          console.error("Error in submitHandler:", error);
-          alert("An error occurred. Please try again later.");
-          // Unblock UI after request is complete
-          $.unblockUI();
-        }
-      },
-    });
-
     $("#danceClassForm").validate({
       rules: {
         firstName: {
           required: true,
-          minlength: 2,
         },
         lastName: {
           required: true,
-          minlength: 2,
         },
         phone: {
           required: true,
@@ -311,79 +161,87 @@
           required: true,
           minlength: 8,
         },
-        preferredDate: {
+        date: {
           required: true,
         },
-        preferredTime: {
+        time: {
           required: true,
         },
-        message: {
+        info: {
           required: true,
         },
       },
       messages: {
         firstName: {
-          required: "Please enter your first name",
-          minlength: "First name must be at least 2 characters",
+          required: "Please enter your first name.",
         },
         lastName: {
-          required: "Please enter your last name",
-          minlength: "Last name must be at least 2 characters",
+          required: "Please enter your last name.",
         },
         phone: {
-          required: "Please enter your phone number",
-          minlength: "Phone number must be 10 digits",
-          maxlength: "Phone number must be 10 digits",
+          required: "Please enter your phone number.",
+          minlength: "Phone no. must be at least 10 digits long.",
+          maxlength: "Phone no. must be max 10 digits long.",
         },
-        dob: "Please enter your date of birth",
+        dob: {
+          required: "Please enter your date of birth.",
+        },
         email: {
-          required: "Please enter your email",
-          email: "Please enter a valid email address",
+          required: "Please enter your email address.",
+          email: "Please enter a valid email address.",
         },
         password: {
-          required: "Please enter a password",
-          minlength: "Password must be at least 8 characters",
+          required: "Please enter a password.",
+          minlength: "Password must be at least 8 characters long.",
         },
-        preferredDate: "Please enter your preferred date",
-        preferredTime: "Please enter your preferred time",
-        message: "Please enter additional information",
+        date: {
+          required: "Please enter your preferred date.",
+        },
+        time: {
+          required: "Please enter your preferred time.",
+        },
+        info: {
+          required: "Please enter a message.",
+        },
       },
-      submitHandler: function (form, event) {
-        event.preventDefault(); // Prevent the default form submission
-        try {
-          // Block UI on form submission
-          $.blockUI({
-            message:
-              '<div class="spinner-border" role="status"><span class="visually-hidden">Loading...</span></div>',
-          });
+      submitHandler: function (form) {
+        toastr.success("Form submitted successfully.");
+        $("#danceClassForm")[0].reset();
+        return false;
+      },
+    });
+    $("#password").keyup(function () {
+      var password = $(this).val();
+      var strength = 0;
 
-          // AJAX form submission
-          $.ajax({
-            type: "POST",
-            url: "form.php", // Replace with your backend URL
-            data: $(form).serialize(), // Serialize form data
-            success: function (response) {
-              // Show success message
-              alert("Form submitted successfully!");
-              // Reset the form
-              $(form)[0].reset();
-              // Unblock UI after request is complete
-              $.unblockUI();
-            },
-            error: function (xhr, status, error) {
-              console.error(xhr.responseText);
-              alert("An error occurred. Please try again later.");
-              // Unblock UI after request is complete
-              $.unblockUI();
-            },
-          });
-        } catch (error) {
-          console.error("Error in submitHandler:", error);
-          alert("An error occurred. Please try again later.");
-          // Unblock UI after request is complete
-          $.unblockUI();
-        }
-      },
+      if (password.match(/[a-z]/) && password.match(/[A-Z]/)) {
+        strength += 1;
+      }
+
+      if (password.match(/[0-9]/)) {
+        strength += 1;
+      }
+
+      if (password.match(/[$&+,:;=?@#|'<>.^*()%!-]/)) {
+        strength += 1;
+      }
+
+      var strengthText = "";
+      switch (strength) {
+        case 0:
+          strengthText = "Weak";
+          break;
+        case 1:
+          strengthText = "Medium";
+          break;
+        case 2:
+          strengthText = "Strong";
+          break;
+        case 3:
+          strengthText = "Very Strong";
+          break;
+      }
+      $("#passwordStrength").html("Password Strength: " + strengthText);
     });
   });
 </script>
