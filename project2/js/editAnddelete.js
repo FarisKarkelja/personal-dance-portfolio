@@ -3,7 +3,6 @@ const userQuestion = document.getElementById('userQuestion');
 const successButton = document.getElementById('success');
 const questionsContainer = document.getElementById('questionsContainer');
 
-// Fetch questions from JSON file
 fetch('../project2/json/questions.json')
   .then(response => response.json())
   .then(questions => {
