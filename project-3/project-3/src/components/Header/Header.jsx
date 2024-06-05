@@ -18,9 +18,7 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import FacebookIcon from "@mui/icons-material/Facebook";
-
-/* <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />*/
-          
+       
 import "./Header.css";
 
 function Header() {
@@ -44,14 +42,14 @@ function Header() {
   };
 
   return (
-    <AppBar position="static" className="appBar" style={{ color: theme.palette.secondary.main }}>
+    <AppBar position="static" className="appBar" style={{ color: theme.palette.primary.main }}>
       <Container maxWidth="xl">
-        <Toolbar disableGutters>
+        <Toolbar disableGutters sx={{ justifyContent: 'center' }}>
           <Typography
             variant="h6"
             noWrap
             component="a"
-            href="#app-bar-with-responsive-menu"
+            href="../Home/Home.jsx"
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
@@ -125,7 +123,7 @@ function Header() {
             variant="h5"
             noWrap
             component="a"
-            href="#app-bar-with-responsive-menu"
+            href="../Home/Home.jsx"
             sx={{
               mr: 2,
               display: { xs: "flex", md: "none" },
@@ -139,7 +137,7 @@ function Header() {
           >
             Faris Karkelja
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" }, justifyContent: 'center' }}>
             <Button
               onClick={handleCloseNavMenu}
               sx={{ my: 2, color: "white", display: "block" }}
@@ -181,7 +179,8 @@ function Header() {
               </Link>
             </Button>
           </Box>
-          <a href="https://www.instagram.com/faris.karkelja" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit', marginRight: '8px' }}>
+          <Box sx={{ display: 'flex' }}>
+            <a href="https://www.instagram.com/faris.karkelja" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit', marginRight: '8px' }}>
               <InstagramIcon sx={{ mr: 1.4 }}/>
             </a>
             <a href="https://www.linkedin.com/in/faris-karkelja-a046932ba/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit', marginRight: '8px' }}>
@@ -193,6 +192,7 @@ function Header() {
             <a href="https://www.facebook.com/faris.karkelja" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
               <FacebookIcon />
             </a>
+          </Box>
         </Toolbar>
       </Container>
     </AppBar>

@@ -13,16 +13,16 @@ import { ThemeProvider } from "@emotion/react";
 const theme = createTheme({
   palette: {
     primary: {
-      light: '#757ce8',
-      main: '#3f50b5',
-      dark: '#002884',
-      contrastText: '#fff',
+      light: '#ffffff',
+      main: '#ffffff',
+      dark: '#cccccc',
+      contrastText: '#000000',
     },
     secondary: {
-      light: '#ff7961',
-      main: '#f44336',
-      dark: '#ba000d',
-      contrastText: '#000',
+      light: '#ffff8d',
+      main: '#ffeb3b',
+      dark: '#c8b900',
+      contrastText: '#000000',
     },
   },
 });

@@ -3,7 +3,7 @@ import "./About.css";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-import profileImage from "../../assets/image1.jpg";
+import profileImage from "../../assets/images/image1.jpg";
 import Button from "@mui/material/Button";
 import { styled } from "@mui/material/styles";
 import Dialog from "@mui/material/Dialog";

@@ -7,7 +7,7 @@ function Footer() {
 
   return (
     <footer>
-      <p style={{ color: theme.palette.secondary.main }}>
+      <p style={{ color: theme.palette.primary.main }}>
         &copy; 2024 Faris Karkelja. All rights reserved.
       </p>
     </footer>
