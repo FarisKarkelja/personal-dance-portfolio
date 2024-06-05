@@ -102,9 +102,7 @@ This project is not licensed.
 
 ## Acknowledgements
 
-- [Web3Forms](https://www.web3forms.com/)
 - [Font Awesome](https://fontawesome.com/)
 - [W3Schools](https://www.w3schools.com/)
 - [Stack Overflow](https://stackoverflow.com/)
-- [Bootstrap](https://getbootstrap.com/)
 - University materials and resources
