@@ -1,14 +1,45 @@
 .card {
-    width: 60%;
+    width: 40%;
     display: flex;
     align-items: center;
     padding: 16px;
     margin: 0 auto; 
+    margin-top: 40px;
 }
 
 .profileImage {
-    width: 100px;
-    height: 100px;
+    margin-top: 20px;
+    width: 240px;
+    height: 240px;
     border-radius: 50%;
-    margin-right: 16px;
+    object-fit: cover;
+    object-position: center -14px;
+    border: 2px solid white;
+}
+
+.about {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column; 
+}
+
+.aboutTitle {
+    text-align: center;
+    padding-bottom: 24px;
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 24px; 
+}
+
+.readLessBtn, .readMoreBtn {
+    color: #000 !important;
+}
+
+.about .content {
+    color: #000;
+    text-align: center;
 }

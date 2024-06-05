@@ -7,10 +7,30 @@ import Projects from "./pages/Projects/Projects.jsx";
 import Gallery from "./pages/Gallery/Gallery.jsx";
 import Contact from "./pages/Contact/Contact.jsx";
 import Grid from "@mui/material/Grid";
+import { createTheme } from '@mui/material/styles';
+import { ThemeProvider } from "@emotion/react";
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      light: '#757ce8',
+      main: '#3f50b5',
+      dark: '#002884',
+      contrastText: '#fff',
+    },
+    secondary: {
+      light: '#ff7961',
+      main: '#f44336',
+      dark: '#ba000d',
+      contrastText: '#000',
+    },
+  },
+});
 
 function App() {
   return (
     <>
+    <ThemeProvider theme={theme}>
       <Router>
         <Grid container spacing={2}>
           <Grid item xs={12}>
@@ -30,6 +50,7 @@ function App() {
           </Grid>
         </Grid>
       </Router>
+      </ThemeProvider>
     </>
   );
 }

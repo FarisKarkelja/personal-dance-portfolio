@@ -1,5 +1,10 @@
 import "./Contact.css";
 import React, { useState } from "react";
+import PersonIcon from '@mui/icons-material/Person';
+import EmailIcon from '@mui/icons-material/Email';
+import PhoneIcon from '@mui/icons-material/Phone';
+import HomeIcon from '@mui/icons-material/Home';
+import MessageIcon from '@mui/icons-material/Message';
 
 function Contact() {
     const [name, setName] = useState("");
@@ -40,6 +45,7 @@ function Contact() {
         <div>
             <h2 className="contactHeading">Contact Me</h2>
             <form onSubmit={handleSubmit}>
+            <PersonIcon />
                 <input
                     type="text"
                     placeholder="Name"
@@ -48,6 +54,7 @@ function Contact() {
                 />
                 {errors.name && <span className="error">{errors.name}</span>}
                 <br />
+                <EmailIcon />
                 <input
                     type="text"
                     placeholder="Email"
@@ -56,6 +63,7 @@ function Contact() {
                 />
                 {errors.email && <span className="error">{errors.email}</span>}
                 <br />
+                <PhoneIcon />  
                 <input
                     type="text"
                     placeholder="Phone No."
@@ -66,6 +74,7 @@ function Contact() {
                     <span className="error">{errors.phoneNumber}</span>
                 )}
                 <br />
+                <HomeIcon />
                 <input
                     type="text"
                     placeholder="Address"
@@ -74,6 +83,7 @@ function Contact() {
                 />
                 {errors.address && <span className="error">{errors.address}</span>}
                 <br />
+                <MessageIcon />
                 <input
                     type="text"
                     placeholder="Message"

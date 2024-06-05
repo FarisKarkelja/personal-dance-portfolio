@@ -1,11 +1,17 @@
 import './Footer.css';
 
-function Footer(){
-    return(
-        <footer>
-            <p>&copy; 2024 Faris Karkelja. All rights reserved.</p>
-        </footer>
-    );
+import { useTheme } from '@mui/material/styles';
+
+function Footer() {
+  const theme = useTheme();
+
+  return (
+    <footer>
+      <p style={{ color: theme.palette.secondary.main }}>
+        &copy; 2024 Faris Karkelja. All rights reserved.
+      </p>
+    </footer>
+  );
 }
 
 export default Footer;

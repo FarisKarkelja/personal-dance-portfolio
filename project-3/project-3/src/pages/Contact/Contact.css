@@ -1,6 +1,7 @@
 .error {
     color: red;
-
+    margin-bottom: 12px;
+    margin-top: -8px;
 }
 
 input {
@@ -35,3 +36,4 @@ form {
 .contactHeading {
     text-align: center;
 }
+

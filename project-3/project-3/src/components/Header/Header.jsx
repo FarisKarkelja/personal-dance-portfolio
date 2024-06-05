@@ -13,9 +13,18 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
+import { useTheme } from '@mui/material/styles';
+import InstagramIcon from "@mui/icons-material/Instagram";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import FacebookIcon from "@mui/icons-material/Facebook";
+
+/* <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />*/
+          
+import "./Header.css";
 
 function Header() {
+  const theme = useTheme();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -35,10 +44,9 @@ function Header() {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" className="appBar" style={{ color: theme.palette.secondary.main }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
           <Typography
             variant="h6"
             noWrap
@@ -54,7 +62,7 @@ function Header() {
               textDecoration: "none",
             }}
           >
-            LOGO
+            Faris Karkelja
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -113,7 +121,6 @@ function Header() {
               </MenuItem>
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
           <Typography
             variant="h5"
             noWrap
@@ -130,7 +137,7 @@ function Header() {
               textDecoration: "none",
             }}
           >
-            LOGO
+            Faris Karkelja
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             <Button
@@ -174,6 +181,18 @@ function Header() {
               </Link>
             </Button>
           </Box>
+          <a href="https://www.instagram.com/faris.karkelja" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit', marginRight: '8px' }}>
+              <InstagramIcon sx={{ mr: 1.4 }}/>
+            </a>
+            <a href="https://www.linkedin.com/in/faris-karkelja-a046932ba/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit', marginRight: '8px' }}>
+              <LinkedInIcon sx={{ mr: 1.4 }}/>
+            </a>
+            <a href="https://github.com/FarisKarkelja" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit', marginRight: '8px' }}>
+              <GitHubIcon sx={{ mr: 1.4 }}/>
+            </a>
+            <a href="https://www.facebook.com/faris.karkelja" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <FacebookIcon />
+            </a>
         </Toolbar>
       </Container>
     </AppBar>
