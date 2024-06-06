@@ -13,12 +13,12 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import { useTheme } from '@mui/material/styles';
+import { useTheme } from "@mui/material/styles";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import FacebookIcon from "@mui/icons-material/Facebook";
-       
+import CustomFont from "../../assets/PhotographSignature.ttf";
 import "./Header.css";
 
 function Header() {
@@ -42,10 +42,27 @@ function Header() {
   };
 
   return (
-    <AppBar position="static" className="appBar" style={{ color: theme.palette.primary.main }}>
+    <AppBar position="static" className="appBar">
       <Container maxWidth="xl">
-        <Toolbar disableGutters sx={{ justifyContent: 'center' }}>
+        <Toolbar
+          disableGutters
+          sx={{ justifyContent: "center", alignItems: "center" }}
+          style={{ color: theme.palette.primary.main }}
+        >
+          <style>
+            {`
+                    @font-face {
+                        font-family: "PhotographSignature";
+                        src: url(${CustomFont}) format("truetype");
+                    }
+    
+                    .customH3 {
+                        font-family: "PhotographSignature", sans-serif;
+                    }
+                `}
+          </style>
           <Typography
+            className="customH3"
             variant="h6"
             noWrap
             component="a"
@@ -54,10 +71,10 @@ function Header() {
               mr: 2,
               display: { xs: "none", md: "flex" },
               fontFamily: "monospace",
-              fontWeight: 700,
               letterSpacing: ".3rem",
               color: "inherit",
               textDecoration: "none",
+              fontSize: "2rem",
             }}
           >
             Faris Karkelja
@@ -120,24 +137,32 @@ function Header() {
             </Menu>
           </Box>
           <Typography
+            className="customH3"
             variant="h5"
             noWrap
             component="a"
             href="../Home/Home.jsx"
             sx={{
               mr: 2,
-              display: { xs: "flex", md: "none" },
+              display: { xs: "none", md: "none" }, 
               flexGrow: 1,
               fontFamily: "monospace",
               fontWeight: 700,
               letterSpacing: ".3rem",
               color: "inherit",
               textDecoration: "none",
+              fontSize: "2rem",
             }}
           >
             Faris Karkelja
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" }, justifyContent: 'center' }}>
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: "none", md: "flex" },
+              justifyContent: "center",
+            }}
+          >
             <Button
               onClick={handleCloseNavMenu}
               sx={{ my: 2, color: "white", display: "block" }}
@@ -179,17 +204,49 @@ function Header() {
               </Link>
             </Button>
           </Box>
-          <Box sx={{ display: 'flex' }}>
-            <a href="https://www.instagram.com/faris.karkelja" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit', marginRight: '8px' }}>
-              <InstagramIcon sx={{ mr: 1.4 }}/>
+          <Box sx={{ display: { xs: "none", md: "flex" } }}>
+            <a
+              href="https://www.instagram.com/faris.karkelja"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                textDecoration: "none",
+                color: "inherit",
+                marginRight: "8px",
+              }}
+            >
+              <InstagramIcon sx={{ mr: 1.4 }} />
             </a>
-            <a href="https://www.linkedin.com/in/faris-karkelja-a046932ba/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit', marginRight: '8px' }}>
-              <LinkedInIcon sx={{ mr: 1.4 }}/>
+            <a
+              href="https://www.linkedin.com/in/faris-karkelja-a046932ba/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                textDecoration: "none",
+                color: "inherit",
+                marginRight: "8px",
+              }}
+            >
+              <LinkedInIcon sx={{ mr: 1.4 }} />
             </a>
-            <a href="https://github.com/FarisKarkelja" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit', marginRight: '8px' }}>
-              <GitHubIcon sx={{ mr: 1.4 }}/>
+            <a
+              href="https://github.com/FarisKarkelja"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                textDecoration: "none",
+                color: "inherit",
+                marginRight: "8px",
+              }}
+            >
+              <GitHubIcon sx={{ mr: 1.4 }} />
             </a>
-            <a href="https://www.facebook.com/faris.karkelja" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+            <a
+              href="https://www.facebook.com/faris.karkelja"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
               <FacebookIcon />
             </a>
           </Box>

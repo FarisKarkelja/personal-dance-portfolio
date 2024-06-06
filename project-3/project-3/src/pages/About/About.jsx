@@ -28,12 +28,7 @@ function About() {
             className="content"
           >
             Hi! My name is Faris Karkelja, a 20-year-old salsa dancer based in
-            Sarajevo, Bosnia and Herzegovina. In 2021, I had the opportunity to
-            showcase my talent on the mesmerizing platform of the Supertalent
-            Show held in Zagreb, the capital city of Croatia. This experience
-            was a crucial moment in my dance career, igniting a renewed sense of
-            motivation that has fueled my continuous growth and improvement ever
-            since.
+            Sarajevo, Bosnia and Herzegovina.
           </Typography>
           <div className="buttonContainer">
             <CustomizedDialogs />
@@ -65,7 +60,12 @@ function CustomizedDialogs() {
 
   return (
     <React.Fragment>
-      <Button variant="outlined" onClick={handleClickOpen} sx={{ borderColor: "black"}} className="readMoreBtn">
+      <Button
+        variant="outlined"
+        onClick={handleClickOpen}
+        sx={{ borderColor: "black" }}
+        className="readMoreBtn"
+      >
         Read More
       </Button>
       <BootstrapDialog
@@ -90,20 +90,32 @@ function CustomizedDialogs() {
         </IconButton>
         <DialogContent dividers>
           <Typography gutterBottom>
+            Hi! My name is Faris Karkelja, a 20-year-old salsa dancer based in
+            Sarajevo, Bosnia and Herzegovina. In 2021, I had the opportunity to
+            showcase my talent on the mesmerizing platform of the Supertalent
+            Show held in Zagreb, the capital city of Croatia.
+          </Typography>
+          <Typography gutterBottom>
+            This experience was a crucial moment in my dance career, igniting a
+            renewed sense of motivation that has fueled my continuous growth and
+            improvement ever since.
+          </Typography>
+          <Typography gutterBottom>
             Apart from my passion for the art of dance, I have a deep interest
             in various technological domains. Alongside my dance journey, I am
             currently engaged in higher education, focusing on Information
             Technology at the university level.
           </Typography>
           <Typography gutterBottom>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
-            Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
-            auctor.
+            Balancing my love for dance with my academic pursuits has been a
+            rewarding challenge. When I'm not dancing or studying, I enjoy
+            exploring the latest advancements in tech. I believe that my diverse
+            interests allow me to bring a unique perspective to both fields.
           </Typography>
           <Typography gutterBottom>
-            Aenean lacinia bibendum nulla sed consectetur. Praesent commodo
-            cursus magna, vel scelerisque nisl consectetur et. Donec sed odio
-            dui. Donec ullamcorper nulla non metus auctor fringilla.
+            My goal is to merge my creative talents with my technical skills to
+            innovate and inspire. I'm excited about the future and eager to see
+            where my passions for dance and technology will take me.
           </Typography>
         </DialogContent>
         <DialogActions>

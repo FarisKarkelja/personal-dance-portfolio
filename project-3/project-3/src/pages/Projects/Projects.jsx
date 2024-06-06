@@ -16,7 +16,14 @@ import project9 from "../../assets/projects/project9.jpg";
 
 export default function Projects() {
   return (
-    <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1rem", placeItems: "center"}}>
+    <div
+      style={{
+        display: "grid",
+        gridTemplateColumns: "repeat(auto-fit, minmax(345px, 1fr))",
+        gap: "1rem",
+        placeItems: "center",
+      }}
+    >
       <Card sx={{ maxWidth: 345 }}>
         <CardActionArea>
           <CardMedia
@@ -30,7 +37,9 @@ export default function Projects() {
               Supertalent
             </Typography>
             <Typography variant="body2" color="text.secondary">
-            Second-ever dance performance on the stages of the Supertalent Show resulted in success, with the judges' acknowledgment serving as the wind at one's back.
+              Second-ever dance performance on the stages of the Supertalent
+              Show resulted in success, with the judges' acknowledgment serving
+              as the wind at one's back.
             </Typography>
           </CardContent>
         </CardActionArea>
@@ -48,7 +57,9 @@ export default function Projects() {
               Erasmus+
             </Typography>
             <Typography variant="body2" color="text.secondary">
-            Unforgettable journey with the Erasmus+ Programme located in Montecatini Terme, Italy, where joy and optimism filled the air alongside dance and socialization.
+              Unforgettable journey with the Erasmus+ Programme located in
+              Montecatini Terme, Italy, where joy and optimism filled the air
+              alongside dance and socialization.
             </Typography>
           </CardContent>
         </CardActionArea>
@@ -66,8 +77,9 @@ export default function Projects() {
               Talk Show
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              Lizards are a widespread group of squamate reptiles, with over
-              6,000 species, ranging across all continents except Antarctica
+              A talk show appearance on the Hayat TV network, where the host and
+              the audience were left in awe by the performance and the story
+              behind the dance.
             </Typography>
           </CardContent>
         </CardActionArea>
@@ -85,8 +97,9 @@ export default function Projects() {
               Championship
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              Lizards are a widespread group of squamate reptiles, with over
-              6,000 species, ranging across all continents except Antarctica
+              A dance competition in the city of Sarajevo, where the performance
+              of the dance group was met with a standing ovation and the
+              first-place trophy.
             </Typography>
           </CardContent>
         </CardActionArea>
@@ -104,8 +117,9 @@ export default function Projects() {
               Bosniak Institute
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              Lizards are a widespread group of squamate reptiles, with over
-              6,000 species, ranging across all continents except Antarctica
+              A performance at the Bosniak Institute in Sarajevo, where the art
+              of dance was presented to the audience in a unique and
+              unforgettable way.
             </Typography>
           </CardContent>
         </CardActionArea>
@@ -123,8 +137,9 @@ export default function Projects() {
               Bolero Dance
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              Lizards are a widespread group of squamate reptiles, with over
-              6,000 species, ranging across all continents except Antarctica
+              A dance performance at the Bolero Dance Festival in Sarajevo,
+              where the atmposphere was constantly filled with beauty and
+              elegance of the dance.
             </Typography>
           </CardContent>
         </CardActionArea>
@@ -142,8 +157,9 @@ export default function Projects() {
               Avon Show
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              Lizards are a widespread group of squamate reptiles, with over
-              6,000 species, ranging across all continents except Antarctica
+              A dance performance at the Avon Show in Sarajevo, where the
+              audience was captivated by the mesmerizing choreography and the
+              seamless synchronization of the dancers.
             </Typography>
           </CardContent>
         </CardActionArea>
@@ -161,8 +177,9 @@ export default function Projects() {
               Mercedes Event
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              Lizards are a widespread group of squamate reptiles, with over
-              6,000 species, ranging across all continents except Antarctica
+              A mesmerizing dance performance at the Mercedes-Benz Starline
+              Event, where elegance and innovation collided on the dance floor,
+              showcasing the beauty of the well-know brand.
             </Typography>
           </CardContent>
         </CardActionArea>
@@ -180,7 +197,9 @@ export default function Projects() {
               SSC
             </Typography>
             <Typography variant="body2" color="text.secondary">
-            An indescribable experience of working and sharing the stage with world-class professionals ranging from Cuba, Mexico, Italy, and beyond at the Sarajevo Salsa Congress.
+              An indescribable experience of working and sharing the stage with
+              world-class professionals ranging from Cuba, Mexico, Italy, and
+              beyond at the Sarajevo Salsa Congress.
             </Typography>
           </CardContent>
         </CardActionArea>
