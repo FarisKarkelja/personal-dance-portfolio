@@ -1,5 +1,3 @@
-# Foundations-of-Frontend-Web-Development
-
 # Dance Portfolio Website
 
 ## Table of Contents
